@@ -1,0 +1,17 @@
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/bin/Debug/net7.0/DataAccessLayer.deps.json
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/bin/Debug/net7.0/DataAccessLayer.runtimeconfig.json
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/bin/Debug/net7.0/DataAccessLayer.dll
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/bin/Debug/net7.0/DataAccessLayer.pdb
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/bin/Debug/net7.0/EntityLayer.dll
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/bin/Debug/net7.0/EntityLayer.pdb
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/DataAccessLayer.csproj.AssemblyReference.cache
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/DataAccessLayer.AssemblyInfoInputs.cache
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/DataAccessLayer.AssemblyInfo.cs
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/DataAccessLayer.csproj.CoreCompileInputs.cache
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/DataAccessLayer.csproj.CopyComplete
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/DataAccessLayer.dll
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/refint/DataAccessLayer.dll
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/DataAccessLayer.pdb
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/DataAccessLayer.genruntimeconfig.cache
+/Users/oyun/Projects/MakuSozluk/DataAccessLayer/obj/Debug/net7.0/ref/DataAccessLayer.dll

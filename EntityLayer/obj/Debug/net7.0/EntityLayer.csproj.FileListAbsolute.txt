@@ -1,0 +1,14 @@
+/Users/oyun/Projects/MakuSozluk/EntityLayer/bin/Debug/net7.0/EntityLayer.deps.json
+/Users/oyun/Projects/MakuSozluk/EntityLayer/bin/Debug/net7.0/EntityLayer.runtimeconfig.json
+/Users/oyun/Projects/MakuSozluk/EntityLayer/bin/Debug/net7.0/EntityLayer.dll
+/Users/oyun/Projects/MakuSozluk/EntityLayer/bin/Debug/net7.0/EntityLayer.pdb
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/EntityLayer.csproj.AssemblyReference.cache
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/EntityLayer.AssemblyInfoInputs.cache
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/EntityLayer.AssemblyInfo.cs
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/EntityLayer.csproj.CoreCompileInputs.cache
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/EntityLayer.dll
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/refint/EntityLayer.dll
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/EntityLayer.pdb
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/EntityLayer.genruntimeconfig.cache
+/Users/oyun/Projects/MakuSozluk/EntityLayer/obj/Debug/net7.0/ref/EntityLayer.dll

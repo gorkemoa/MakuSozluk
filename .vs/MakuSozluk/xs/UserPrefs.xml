@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{85B4A3C3-D333-4E1B-A472-B32E332A00CA}|https">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MakuSozluk/Controllers/AdminCategoryController.cs">
+    <Files>
+      <File FileName="MakuSozluk/Controllers/AdminCategoryController.cs" Line="58" Column="18" />
+      <File FileName="MakuSozluk/Views/AdminCategory/Index.cshtml" Line="30" Column="53" />
+      <File FileName="MakuSozluk/Views/AdminCategory/EditCategory.cshtml" Line="11" Column="1" />
+      <File FileName="MakuSozluk/Views/AdminCategory/AddCategory.cshtml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MakuSozluk" expanded="True">
+            <Node name="BusinessLayer" expanded="True">
+              <Node name="Abstrack" expanded="True" />
+              <Node name="Concrete" expanded="True" />
+            </Node>
+            <Node name="MakuSozluk" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="AdminCategoryController.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="AdminCategory" expanded="True" />
+                <Node name="Category" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MakuSozluk PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
