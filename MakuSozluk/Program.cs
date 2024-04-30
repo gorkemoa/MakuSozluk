@@ -1,7 +1,10 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using DataAccessLayer.Concrete;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<Context>();
 
 var app = builder.Build();
 
@@ -13,6 +16,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.MapControllerRoute(
+    name: "statistics",
+    pattern: "statistics/{action=Index}/{id?}",
+    defaults: new { controller = "Statistics", action = "Index" }
+);
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

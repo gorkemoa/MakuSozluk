@@ -12,12 +12,16 @@
     <None Remove="Controllers\" />
     <None Remove="Views\Category\" />
     <None Remove="Views\AdminCategory\" />
+    <None Remove="Views\Statistics\" />
+    <None Remove="Views\Writer\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Views\Category\" />
     <Folder Include="wwwroot\" />
     <Folder Include="Views\AdminCategory\" />
+    <Folder Include="Views\Statistics\" />
+    <Folder Include="Views\Writer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

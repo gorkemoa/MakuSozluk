@@ -9,54 +9,54 @@ using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace MakuSozluk.Controllers
 {
     public class CategoryController : Controller
     {
+        // Kategori işlemleri için CategoryManager sınıfını kullanıyoruz
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+
+        // Kategori listesini göstermek için Index sayfasını döndüren metot
         public IActionResult Index()
         {
             return View();
         }
 
+        // Kategori listesini alıp GetCategoryList view'ına aktaran metot
         public IActionResult GetCategoryList()
         {
-            var categoryvalues = cm.GetList();
-            return View(categoryvalues);
+            var categoryValues = cm.GetList();  // Tüm kategorileri veritabanından al
+            return View(categoryValues);  // Kategori listesini GetCategoryList.cshtml view'ına gönder
         }
 
+        // Yeni kategori ekleme formunu göstermek için HTTP GET metodu
         [HttpGet]
         public ActionResult AddCategory()
         {
-            return View();
+            return View();  // Yeni kategori ekleme formunu döndür
         }
 
+        // Yeni kategori eklemek için HTTP POST metodu
         [HttpPost]
         public ActionResult AddCategory(Category p)
         {
-            CategoryValidator categoryValidator = new CategoryValidator();
-            ValidationResult result = categoryValidator.Validate(p);
-            if(result.IsValid)
+            CategoryValidator categoryValidator = new CategoryValidator();  // Kategori doğrulama kurallarını tanımlayan validator
+            ValidationResult result = categoryValidator.Validate(p);  // Kategori modelini doğrula
+
+            if (result.IsValid)
             {
-                cm.CategoryAdd(p);
-                return RedirectToAction("GetCategoryList");
+                cm.CategoryAdd(p);  // Kategori ekleme işlemi
+                return RedirectToAction("GetCategoryList");  // Kategori ekleme işlemi başarılıysa, kategori listesini gösteren sayfaya yönlendir
             }
             else
             {
                 foreach (var item in result.Errors)
                 {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-
-
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);  // Hata mesajlarını ModelState'e ekle
                 }
             }
-            return View();
+
+            return View();  // Hata durumunda tekrar kategori ekleme sayfasını göster
         }
-
-
-
     }
 }
-
