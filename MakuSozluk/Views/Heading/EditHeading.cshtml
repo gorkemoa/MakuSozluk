@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Concrete.Heading
+
+@{
+    ViewBag.Title = "EditHeading";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Başlık Güncelleme</h2>
+
+@using (Html.BeginForm("EditHeading", "Heading", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.HeadingID) <!-- Başlık ID'sini gizli alan olarak kullan -->
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.HeadingName, "Başlık Adı") <!-- Başlık adı için label -->
+        @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" }) <!-- Başlık adı için input -->
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.CategoryID, "Kategori") <!-- Kategori için label -->
+        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" }) <!-- Kategori için input -->
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.WriterID, "Yazar") <!-- Yazar için label -->
+        @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" }) <!-- Yazar için input -->
+    </div>
+
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+}

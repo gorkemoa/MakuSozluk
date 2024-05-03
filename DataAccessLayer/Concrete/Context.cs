@@ -2,6 +2,7 @@
 using EntityLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace DataAccessLayer.Concrete
 {
     public class Context : DbContext
@@ -10,6 +11,7 @@ namespace DataAccessLayer.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql("Host=localhost; Port=5432; Database=Blog; User ID=postgres; Password=123; Pooling=true;");
+          
         }
 
         public DbSet<About> Abouts { get; set; }

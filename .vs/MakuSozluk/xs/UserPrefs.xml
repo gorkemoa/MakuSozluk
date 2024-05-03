@@ -1,51 +1,37 @@
 ﻿<Properties StartupConfiguration="{85B4A3C3-D333-4E1B-A472-B32E332A00CA}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MakuSozluk/Controllers/AdminCategoryController.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="MakuSozluk/Views/Heading/Index.cshtml">
     <Files>
-      <File FileName="MakuSozluk/Views/Shared/_AdminLayout.cshtml" Line="94" Column="92" />
-      <File FileName="MakuSozluk/Controllers/AdminCategoryController.cs" Line="63" Column="1" />
-      <File FileName="MakuSozluk/Controllers/CategoryController.cs" Line="63" Column="1" />
+      <File FileName="BusinessLayer/Abstrack/IHeadingService.cs" />
+      <File FileName="BusinessLayer/Abstrack/ICategoryService.cs" />
+      <File FileName="MakuSozluk/Views/Heading/Index.cshtml" Line="3" Column="1" />
+      <File FileName="MakuSozluk/Controllers/WriterController.cs" />
+      <File FileName="MakuSozluk/Controllers/HeadingController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MakuSozluk" expanded="True">
-            <Node name="BusinessLayer" expanded="True">
+            <Node name="BusinessLayer">
               <Node name="Abstrack" expanded="True" />
-              <Node name="Concrete" expanded="True" />
             </Node>
-            <Node name="DataAccessLayer" expanded="True">
-              <Node name="Abstract" expanded="True" />
-              <Node name="Concrete" expanded="True" />
-            </Node>
-            <Node name="EntityLayer" expanded="True" />
             <Node name="MakuSozluk">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers">
-                <Node name="AdminCategoryController.cs" selected="True" />
-              </Node>
-              <Node name="Views">
-                <Node name="Category" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_Layout.cshtml" expanded="True" />
-                </Node>
-                <Node name="Statistics" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="AdminLTE-3.0.4" expanded="True">
-                  <Node name="pages" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Heading" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
                 </Node>
               </Node>
+              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.MakuSozluk PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MakuSozluk PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

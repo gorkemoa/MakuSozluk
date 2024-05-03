@@ -124,6 +124,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<DateTime>("ContentDate")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<bool>("ContentStatus")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("ContentValue")
                         .IsRequired()
                         .HasMaxLength(1000)
@@ -163,6 +166,9 @@ namespace DataAccessLayer.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
+                    b.Property<bool>("HeadingStatus")
+                        .HasColumnType("boolean");
+
                     b.Property<int>("WriterID")
                         .HasColumnType("integer");
 
@@ -183,15 +189,20 @@ namespace DataAccessLayer.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("WriterID"));
 
-                    b.Property<string>("WriterImage")
+                    b.Property<string>("WriterAbout")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<string>("WriterImage")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
                     b.Property<string>("WriterMail")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.Property<string>("WriterName")
                         .IsRequired()
@@ -200,10 +211,18 @@ namespace DataAccessLayer.Migrations
 
                     b.Property<string>("WriterPassword")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<bool>("WriterStatus")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("WriterSurName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("WriterTitle")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");

@@ -1,0 +1,74 @@
+﻿@model EntityLayer.Concrete.Heading
+@{
+    ViewBag.Title = "Başlık Ekle";
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br/>
+<div class="container mt-5">
+    <h2 class="mb-4">Başlık Ekle</h2>
+    <form id="addHeadingForm" asp-action="AddHeading" asp-controller="Heading" method="post">
+        <div class="form-group">
+            <label for="HeadingName">Başlık Adı</label>
+            <input type="text" class="form-control" id="HeadingName" name="HeadingName" asp-for="HeadingName" required>
+            <span asp-validation-for="HeadingName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="CategoryID">Kategori</label>
+            <select asp-for="CategoryID" class="form-control" asp-items="@(ViewBag.vlc)">
+                <option value="">-- Kategori Seçin --</option>
+            </select>
+            <span asp-validation-for="CategoryID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="WriterID">Yazar</label>
+            <select asp-for="WriterID" class="form-control" asp-items="@(ViewBag.wlc)">
+                <option value="">-- Yazar Seçin --</option>
+            </select>
+            <span asp-validation-for="WriterID" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Başlık Ekle</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>// Form gönderildiğinde çalışacak JavaScript kodu
+        document.getElementById("addHeadingForm").addEventListener("submit", function (event) {
+            // Formun varsayılan davranışını engelle
+            event.preventDefault();
+
+            // Form verilerini topla
+            const formData = new FormData(event.target);
+
+            // Verileri JSON formatına dönüştür
+            const jsonData = {};
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            // JSON verisini gönder
+            fetch("/Heading/AddHeading", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(jsonData)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error("Form gönderilirken bir hata oluştu.");
+                    }
+                })
+                .then(data => {
+                    // Başarılı cevap alındığında yapılacak işlemler
+                    console.log("Başlık eklendi:", data);
+                    // İsteğe bağlı olarak başka işlemler yapabilirsiniz (örneğin, sayfayı yeniden yükle)
+                })
+                .catch(error => {
+                    // Hata durumunda yapılacak işlemler
+                    console.error("Hata:", error);
+                });
+        });</script>
+}

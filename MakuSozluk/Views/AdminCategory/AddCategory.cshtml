@@ -5,22 +5,52 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h3>KATEGORİ EKLEME ALANI</h3>
-<br />
-@using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
-{
-    <div class="form-group">
-        @Html.Label("Kategori Adı")
-        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.CategoryName)
-        <br />
-        <br />
-        @Html.Label("Kategori Açıklaması")
-        @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.CategoryDescription)
-        <br />             <br />
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title">Kategori Ekleme Formu</h3>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(x => x.CategoryName, new { @class = "form-label" })
+                    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control", placeholder = "Kategori Adı", required = "required" })
+                    <div class="invalid-feedback">@Html.ValidationMessageFor(x => x.CategoryName)</div>
+                </div>
 
-        <button class="btn btn-info">Kaydet</button>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.CategoryDescription, new { @class = "form-label" })
+                    @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control", placeholder = "Kategori Açıklaması", rows = "4", required = "required" })
+                    <div class="invalid-feedback">@Html.ValidationMessageFor(x => x.CategoryDescription)</div>
+                </div>
 
+                <button type="submit" class="btn btn-primary btn-block">Kaydet</button>
+            }
+        </div>
     </div>
+</div>
+
+@section Scripts {
+    <script>// JavaScript to add custom styling and validation behavior
+        (function () {
+            'use strict';
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+        })();</script>
 }
+

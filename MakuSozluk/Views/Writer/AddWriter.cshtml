@@ -1,0 +1,144 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewBag.Title = "Yazar Ekleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazar Ekleme Formu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Yazar Ekleme Formu</h2>
+            <form asp-action="AddWriter" asp-controller="Writer" method="post">
+                <div class="form-group">
+                    <label asp-for="WriterName">Ad</label>
+                    <input asp-for="WriterName" class="form-control" required>
+                    @Html.ValidationMessageFor(x => x.WriterName)
+                </div>
+                <div class="form-group">
+                    <label asp-for="WriterSurName">Soyad</label>
+                    <input asp-for="WriterSurName" class="form-control" required>
+                    @Html.ValidationMessageFor(x => x.WriterSurName)
+                </div>
+                <div class="form-group">
+                    <label asp-for="WriterImage">Profil Resmi URL</label>
+                    <input asp-for="WriterImage" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="WriterAbout">Hakkımda</label>
+                    <textarea asp-for="WriterAbout" class="form-control" rows="3"></textarea>
+                    @Html.ValidationMessageFor(x => x.WriterAbout)
+                </div>
+                <div class="form-group">
+                    <label asp-for="WriterMail">E-posta Adresi</label>
+                    <input asp-for="WriterMail" class="form-control" required>
+                    <span asp-validation-for="WriterMail" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="WriterTitle">Unvan</label>
+                    <input asp-for="WriterTitle" class="form-control" required>
+                    @Html.ValidationMessageFor(x => x.WriterTitle)
+                    <span asp-validation-for="WriterTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WriterPassword">Şifre</label>
+                    <input asp-for="WriterPassword" class="form-control" required>
+                    <span asp-validation-for="WriterPassword" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Yazarı Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script to show success/failure modals -->
+    <script>function showSuccessMessage() {
+            $('#successModal').modal('show');
+        }
+
+        function showFailureMessage() {
+            $('#failureModal').modal('show');
+        }
+
+        $(document).ready(function () {
+            $('form').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: $(this).attr('action'),
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        showSuccessMessage();
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        showFailureMessage();
+                    }
+                });
+            });
+        });</script>
+
+    <!-- Success and failure modals -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Başarılı!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Yazar başarıyla eklendi.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="failureModal" tabindex="-1" role="dialog" aria-labelledby="failureModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="failureModalLabel">Başarısız!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Yazar ekleme başarısız oldu. Lütfen tekrar deneyin.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
